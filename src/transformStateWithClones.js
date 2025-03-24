@@ -32,7 +32,7 @@ function transformStateWithClones(state, actions) {
         currentState = {};
         break;
       default:
-        return 'error';
+        throw new Error(`Invalid action type: ${action.type}`);
     }
 
     history.push({ ...currentState });
